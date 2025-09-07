@@ -1,0 +1,22 @@
+{
+  "id": "root",
+  "scene": "res://scenes/player/player-scene.tscn",
+  "children": [
+	{
+	  "id": "child_1",
+	  "scene": "res://scenes/enemies/enemy1.tscn",
+	  "children": [
+		{
+		  "id": "child_1_1",
+		  "scene": "res://scenes/npcs/npc1.tscn",
+		  "children": []
+		}
+	  ]
+	},
+	{
+	  "id": "child_2",
+	  "scene": "res://scenes/enemies/enemy2.tscn",
+	  "children": []
+	}
+  ]
+}

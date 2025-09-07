@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdsmyycl17yby"]
+
+[ext_resource type="Script" uid="uid://cidmo5iofvp50" path="res://scripts/levels/level1/scenario_1.gd" id="1_r44r3"]
+
+[node name="Scenario-1" type="Node2D"]
+script = ExtResource("1_r44r3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]

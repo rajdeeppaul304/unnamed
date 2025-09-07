@@ -1,0 +1,26 @@
+{
+  "id": "start",
+  "text": "no text to display",
+  "scene": "res://scenes/levels/level1/scenario-1.tscn",
+  "children": [
+	{
+	  "id": "fuck",
+	  "text": "text for fuck",
+	  "scene": "res://scenes/enemies/enemy1.tscn",
+	  "children": [
+		{
+		  "id": "child from fuck",
+		  "text": "text for child from fuck",
+		  "scene": "res://scenes/npcs/npc1.tscn",
+		  "children": []
+		}
+	  ]
+	},
+	{
+	  "id": "shit",
+	  "text": "text for shit",
+	  "scene": "res://scenes/enemies/enemy2.tscn",
+	  "children": []
+	}
+  ]
+}

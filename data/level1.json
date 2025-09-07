@@ -1,22 +1,33 @@
 {
-  "id": "root",
-  "scene": "res://scenes/player/player-scene.tscn",
-  "children": [
-	{
-	  "id": "child_1",
-	  "scene": "res://scenes/enemies/enemy1.tscn",
-	  "children": [
+	"nodes": [
 		{
-		  "id": "child_1_1",
-		  "scene": "res://scenes/npcs/npc1.tscn",
-		  "children": []
+			"id": "0",
+			"text": "text for start"
+		},
+		
+		{
+			"id": "0_0",
+			"text": "text for 1 children of start"
+		},
+		{
+			"id": "0_1",
+			"text": "text for 2 children of start"
+		},
+		{
+			"id": "0_2",
+			"text": "text for 3 children of start"
+		},
+		
+		{
+			"id": "0_0_0",
+			"text": "lskdjal"
 		}
-	  ]
-	},
-	{
-	  "id": "child_2",
-	  "scene": "res://scenes/enemies/enemy2.tscn",
-	  "children": []
-	}
-  ]
+	],
+
+	"edges": [ {
+			"id": "0",
+			"connected_to": ["0_0", "0_1", "0_2"]
+		}
+
+	]
 }

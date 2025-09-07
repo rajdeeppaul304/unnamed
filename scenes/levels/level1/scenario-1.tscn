@@ -6,3 +6,10 @@
 script = ExtResource("1_r44r3")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 568.0
+offset_top = 314.0
+offset_right = 608.0
+offset_bottom = 337.0
+text = "nigger"

@@ -1,40 +1,32 @@
-extends Node
+extends State
 
-@export
-var starting_state: State
+@export var walk_state: State
 
-var current_state: State
+func enter() -> void:
+	super()
+	parent.velocity = Vector2.ZERO
 
-# Initialize the state machine by giving each child state a reference to the
-# parent object it belongs to and enter the default starting_state.
-func init(parent: Player) -> void:
-	for child in get_children():
-		child.parent = parent
+	play_idle_animation()
 
-	# Initialize to the default state
-	change_state(starting_state)
+func play_idle_animation() -> void:
+	var dir = parent.last_direction
 
-# Change to the new state by first calling any exit logic on the current state.
-func change_state(new_state: State) -> void:
-	if current_state:
-		current_state.exit()
+	if abs(dir.x) > abs(dir.y):
+		# Side idle
+		parent.animations.play("side_idle")
+		parent.sprite.flip_h = dir.x < 0
+	else:
+		if dir.y > 0:
+			parent.animations.play("front_idle")
+		else:
+			parent.animations.play("back_idle")
 
-	current_state = new_state
-	current_state.enter()
-	
-# Pass through functions for the Player to call,
-# handling state changes as needed.
-func process_physics(delta: float) -> void:
-	var new_state = current_state.process_physics(delta)
-	if new_state:
-		change_state(new_state)
+func process_input(event: InputEvent) -> State:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		return walk_state
+	if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		return walk_state
+	return null
 
-func process_input(event: InputEvent) -> void:
-	var new_state = current_state.process_input(event)
-	if new_state:
-		change_state(new_state)
-
-func process_frame(delta: float) -> void:
-	var new_state = current_state.process_frame(delta)
-	if new_state:
-		change_state(new_state)
+func process_physics(delta: float) -> State:
+	return null

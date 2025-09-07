@@ -19,3 +19,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	state_machine.process_physics(delta)
 	move_and_slide()
+
+func is_player():
+	pass

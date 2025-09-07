@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqi8ecr6u1spl"]
+[gd_scene load_steps=5 format=3 uid="uid://cqi8ecr6u1spl"]
 
 [ext_resource type="Script" uid="uid://bn3hb8cqe7850" path="res://scripts/player/player_scene.gd" id="1_63x7p"]
+[ext_resource type="Script" uid="uid://ct2of2qx6fkju" path="res://scripts/player/state_machine.gd" id="2_e30ff"]
+[ext_resource type="Texture2D" uid="uid://dx7s8vestws8m" path="res://assets/character_assets/android_18-sheet.png" id="2_m1u73"]
+[ext_resource type="Script" uid="uid://copbgfltd7vde" path="res://scripts/player/idle.gd" id="3_m1u73"]
 
-[node name="Player-scene" type="Node2D"]
+[node name="Player-scene" type="CharacterBody2D"]
 script = ExtResource("1_63x7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m1u73")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("2_e30ff")
+
+[node name="idle" type="Node" parent="state_machine"]
+script = ExtResource("3_m1u73")

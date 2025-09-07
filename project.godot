@@ -24,6 +24,10 @@ GameManager="*res://scripts/manager/game-manager.gd"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg", "res://addons/godot_vim/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
